@@ -1,1 +1,3 @@
-"# Web-Data_Sekolah" 
+#Web Data Sekolah
+
+Konfigurasi menyusul :P
