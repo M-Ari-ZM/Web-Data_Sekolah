@@ -54,7 +54,7 @@ git clone https://github.com/M-Ari-ZM/Web-Data_Sekolah.git
 - Ketik **localhost/web-data_sekolah**
 - Lalu login menggunakan data admin yang telah dimasukkan
 
-**Selamat Web sudah bisa langsung digunakan!**
+**Selamat! Web sudah bisa langsung digunakan**
 
 ---
 
