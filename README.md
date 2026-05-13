@@ -29,8 +29,8 @@ Web ini aku buat sebagai salah satu project yang harus dituntaskan dalam mapel K
 ### 2. Konfigurasi Databases
 
 - Masuk ke phpMyAdmin
-- Buat database dengan nama "smk"
-- Import file smk.sql ke dalam database yang telah dibuat
+- Buat database dengan nama "**smk**"
+- Import file **smk.sql** ke dalam database yang telah dibuat
 - Pada tabel login, masukkan 1 data akun admin sesuai kalian yang mau. Tapi saya rekomendasikan
 
 ```
@@ -44,17 +44,17 @@ password: admin#123
 - Masuk ke folder **htdocs** jika memakai XAMPP (**www** jika Laragon)
 - Buka Terminal didalam folder tersebut dan jalankan perintah dibawah
 
-```bash
+```cmd
 git clone https://github.com/M-Ari-ZM/Web-Data_Sekolah.git
 ```
 
 ### 4. Masuk ke Web
 
 - Buka browser favorit kalian
-- Ketik localhost/web-data_sekolah
+- Ketik **localhost/web-data_sekolah**
 - Lalu login menggunakan data admin yang telah dimasukkan
 
-**Selamat Web sudah bisa langsung digunakan**
+**Selamat Web sudah bisa langsung digunakan!**
 
 ---
 
