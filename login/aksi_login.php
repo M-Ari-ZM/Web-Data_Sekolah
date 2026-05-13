@@ -12,6 +12,8 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
     $query_guru = mysqli_query($db_link, "SELECT * FROM guru WHERE nama_guru='$username' AND nip='$password'");
 
+    $query_login = mysqli_query($db_link, "SELECT * FROM login WHERE username='$username' AND password='$password'");
+
     $cek_log = mysqli_query($db_link, "SELECT * FROM login WHERE password='$password'");
 
     if (mysqli_num_rows($query_siswa) > 0) {
@@ -35,6 +37,12 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         } else {
             mysqli_query($db_link, "UPDATE login SET username='$username' WHERE password='$password'");
         }
+
+        header("location: ../dashboard_guru.php");
+
+    } else if (mysqli_num_rows($query_login) > 0) {
+        $_SESSION['name'] = $username;
+        $_SESSION['role'] = 'Administrator';
 
         header("location: ../dashboard_guru.php");
 
