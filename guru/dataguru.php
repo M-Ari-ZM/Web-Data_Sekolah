@@ -23,7 +23,7 @@ if (!isset($_SESSION['role'])) {
         DATA GURU
     </h2>
 
-    <?php if ($_SESSION['role'] == 'Guru'): ?>
+    <?php if ($_SESSION['role'] == 'Guru' || 'Administrator'): ?>
         <input type="button" value="Tambah Data" class="btn-tambah" onclick="location.href='tambahguru.php'">
 
     <?php endif; ?>
@@ -36,7 +36,7 @@ if (!isset($_SESSION['role'])) {
                 <th>NAMA</th>
                 <th>ALAMAT</th>
                 <th>JENIS KELAMIN</th>
-                <?php if ($_SESSION['role'] == 'Guru'): ?>
+                <?php if ($_SESSION['role'] == 'Guru' || 'Administrator'): ?>
                     <th style="text-align: center;">AKSI</th>
                 <?php endif; ?>
             </tr>
@@ -60,7 +60,7 @@ if (!isset($_SESSION['role'])) {
                     <td>
                         <?php echo $data["jk_guru"] ?>
                     </td>
-                    <?php if ($_SESSION['role'] == 'Guru'): ?>
+                    <?php if ($_SESSION['role'] == 'Guru' || 'Administrator'): ?>
                         <td style="text-align: center;">
                             <a class="btn-edit" href="editguru.php?id=<?php echo $data['nip']; ?>">EDIT</a>
                             <a class="btn-hapus" href="hapusguru.php?id=<?php echo $data['nip']; ?>"

@@ -22,7 +22,7 @@ if (!isset($_SESSION['role'])) {
     <h2>
         DATA SISWA
     </h2>
-    <?php if ($_SESSION['role'] == 'Guru'): ?>
+    <?php if ($_SESSION['role'] == 'Guru' || 'Administrator'): ?>
         <input type="button" value="Tambah Data" class="btn-tambah" onclick="location.href='tambahsiswa.php'">
     <?php endif; ?>
 
@@ -35,7 +35,7 @@ if (!isset($_SESSION['role'])) {
                 <th>NAMA</th>
                 <th>ALAMAT</th>
                 <th>JENIS KELAMIN</th>
-                <?php if ($_SESSION['role'] == 'Guru'): ?>
+                <?php if ($_SESSION['role'] == 'Guru' || 'Administrator'): ?>
                     <th style="text-align: center;">AKSI</th>
                 <?php endif; ?>
             </tr>
@@ -59,7 +59,7 @@ if (!isset($_SESSION['role'])) {
                     <td>
                         <?php echo $data["jk_siswa"] ?>
                     </td>
-                    <?php if ($_SESSION['role'] == 'Guru'): ?>
+                    <?php if ($_SESSION['role'] == 'Guru' || 'Administrator'): ?>
                         <td style="text-align: center;">
                             <a href="editsiswa.php?id=<?php echo $data['nis']; ?>" class="btn-edit">EDIT</a>
                             <a href="hapussiswa.php?id=<?php echo $data['nis']; ?>" onclick="return confirm('Anda yakin?')"

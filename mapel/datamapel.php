@@ -23,7 +23,7 @@ if (!isset($_SESSION['role'])) {
         DATA MAPEL
     </h2>
 
-    <?php if ($_SESSION['role'] == 'Guru'): ?>
+    <?php if ($_SESSION['role'] == 'Guru' || 'Administrator'): ?>
         <input type="button" value="Tambah Data" class="btn-tambah" onclick="location.href='tambahmapel.php'">
     <?php endif; ?>
 
@@ -33,7 +33,7 @@ if (!isset($_SESSION['role'])) {
             <tr>
                 <th>ID</th>
                 <th>MAPEL</th>
-                <?php if ($_SESSION['role'] == 'Guru'): ?>
+                <?php if ($_SESSION['role'] == 'Guru' || 'Administrator'): ?>
                     <th style="text-align: center;">AKSI</th>
                 <?php endif; ?>
             </tr>
@@ -51,7 +51,7 @@ if (!isset($_SESSION['role'])) {
                     <td>
                         <?php echo $data["nama_mapel"] ?>
                     </td>
-                    <?php if ($_SESSION['role'] == 'Guru'): ?>
+                    <?php if ($_SESSION['role'] == 'Guru' || 'Administrator'): ?>
                         <td style="text-align: center;">
                             <a class="btn-edit" href="editmapel.php?id=<?php echo $data['id_mapel']; ?>">EDIT</a>
                             <a class="btn-hapus" href="hapusmapel.php?id=<?php echo $data['id_mapel']; ?>"

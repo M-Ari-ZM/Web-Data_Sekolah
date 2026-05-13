@@ -23,8 +23,8 @@ if (!isset($_SESSION['role'])) {
         DATA PRODI
     </h2>
 
-    <?php if ($_SESSION['role'] == 'Guru'): ?>
-        <input type="button" value="Tambah Data" class="btn-tambah" onclick="location.href='tambahprodi.php'">
+    <?php if ($_SESSION['role'] == 'Guru' || 'Administrator'): ?>
+            <input type="button" value="Tambah Data" class="btn-tambah" onclick="location.href='tambahprodi.php'">
 
     <?php endif; ?>
 
@@ -34,8 +34,8 @@ if (!isset($_SESSION['role'])) {
             <tr>
                 <th>ID</th>
                 <th>PRODI</th>
-                <?php if ($_SESSION['role'] == 'Guru'): ?>
-                    <th style="text-align: center;">AKSI</th>
+                <?php if ($_SESSION['role'] == 'Guru' || 'Administrator'): ?>
+                        <th style="text-align: center;">AKSI</th>
                 <?php endif; ?>
             </tr>
 
@@ -45,23 +45,23 @@ if (!isset($_SESSION['role'])) {
             $query = mysqli_query($db_link, $sql);
             while ($data = mysqli_fetch_array($query)) {
                 ?>
-                <tr>
-                    <td>
-                        <?php echo $data["id_prodi"] ?>
-                    </td>
-                    <td>
-                        <?php echo $data["nama_prodi"] ?>
-                    </td>
-                    <?php if ($_SESSION['role'] == 'Guru'): ?>
-                        <td style="text-align: center;">
-                            <a class="btn-edit" href="editprodi.php?id=<?php echo $data['id_prodi']; ?>">EDIT</a>
-                            <a class="btn-hapus" href="hapusprodi.php?id=<?php echo $data['id_prodi']; ?>"
-                                onclick="return confirm('Anda yakin?')">HAPUS</a>
+                    <tr>
+                        <td>
+                            <?php echo $data["id_prodi"] ?>
                         </td>
-                    <?php endif; ?>
-                </tr>
-                <?php
-                $no++;
+                        <td>
+                            <?php echo $data["nama_prodi"] ?>
+                        </td>
+                        <?php if ($_SESSION['role'] == 'Guru' || 'Administrator'): ?>
+                                <td style="text-align: center;">
+                                    <a class="btn-edit" href="editprodi.php?id=<?php echo $data['id_prodi']; ?>">EDIT</a>
+                                    <a class="btn-hapus" href="hapusprodi.php?id=<?php echo $data['id_prodi']; ?>"
+                                        onclick="return confirm('Anda yakin?')">HAPUS</a>
+                                </td>
+                        <?php endif; ?>
+                    </tr>
+                    <?php
+                    $no++;
             }
             ?>
         </table>

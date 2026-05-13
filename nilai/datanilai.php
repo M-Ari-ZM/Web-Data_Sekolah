@@ -35,7 +35,7 @@ $total = mysqli_num_rows($query);
     <h2>
         DATA NILAI
     </h2>
-    <?php if ($_SESSION['role'] == 'Guru'): ?>
+    <?php if ($_SESSION['role'] == 'Guru' || 'Administrator'): ?>
         <input type="button" value="Tambah Data" class="btn-tambah" onclick="location.href='tambahnilai.php'">
 
     <?php endif; ?>
@@ -55,7 +55,7 @@ $total = mysqli_num_rows($query);
                 <th>UTS</th>
                 <th>UAS</th>
                 <th>NA</th>
-                <?php if ($_SESSION['role'] == 'Guru'): ?>
+                <?php if ($_SESSION['role'] == 'Guru' || 'Administrator'): ?>
                     <td bgcolor="#e2e8f0" rowspan="<?php echo $total + 1; ?>" width="0.1px"></td>
                     <th style="text-align: center;">AKSI</th>
                 <?php endif; ?>
@@ -95,7 +95,7 @@ $total = mysqli_num_rows($query);
                     <td>
                         <?php echo round($data["na"], 2) ?>
                     </td>
-                    <?php if ($_SESSION['role'] == 'Guru'): ?>
+                    <?php if ($_SESSION['role'] == 'Guru' || 'Administrator'): ?>
                         <td style="text-align: center;">
                             <a class="btn-edit" href="editnilai.php?id=<?php echo $data['id_nilai']; ?>">EDIT</a>
                             <a class="btn-hapus" href="hapusnilai.php?id=<?php echo $data['id_nilai']; ?>"
