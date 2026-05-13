@@ -163,7 +163,7 @@ session_start();
     <div class="login-card">
         <div class="login-container">
             <header>
-                <img src="./public/SMKN1MAJA.png" alt="SMKN 1 Maja logo">
+                <img src="./public/SMKN1MAJA.webp" alt="SMKN 1 Maja logo">
                 <h1><span>Selamat Datang di</span> SMK Negeri 1 Maja</h1>
             </header>
 
