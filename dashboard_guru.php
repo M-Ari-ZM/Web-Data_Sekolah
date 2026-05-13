@@ -3,7 +3,7 @@ include "koneksi.php";
 session_start();
 
 if (!isset($_SESSION['role'])) {
-    header("location: login.php");
+    header("location: index.php");
     exit;
 }
 ?>
@@ -292,7 +292,7 @@ if (!isset($_SESSION['role'])) {
                 <?php echo $_SESSION["role"] ?>
             </b>
 
-            <a href="login.php">Logout</a>
+            <a href="index.php">Logout</a>
         </p>
     </header>
 

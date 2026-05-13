@@ -40,12 +40,12 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
     } else {
         $_SESSION['error'] = "Login Gagal! Username atau Password tidak terdaftar";
-        header("location: ../login.php");
+        header("location: ../index.php");
         exit;
     }
 
 } else {
-    header("location: login.php");
+    header("location: ../index.php");
     exit;
 }
 ?>
